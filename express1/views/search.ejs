@@ -1,0 +1,22 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<%- include('menu'); -%>
+
+<h2>Search</h2>
+<div class="row">
+
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+        <form action="/search" method="POST" role="form">
+            <legend>Find Car</legend>
+
+            <div class="form-group">
+                <label for="">Car Id</label>
+                <input type="text" class="form-control" name="carid" placeholder="Input field">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+</div>

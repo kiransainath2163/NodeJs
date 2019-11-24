@@ -1,0 +1,39 @@
+<head>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+</head>
+<%- include('menu'); -%>
+
+<div class="row">
+
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+        <table class="table table-hover">
+            <tbody>
+                <th>Id</th>
+                <th>Company</th>
+                <% 
+                        for(let i=0;i<cars.length;i++)
+                        {
+                        %>
+                <tr>
+
+                    <td><%=cars[i].id %></td>
+                    <td><%=cars[i].make %></td>
+                </tr>
+                <%
+                }
+                %>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
