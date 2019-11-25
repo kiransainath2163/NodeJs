@@ -1,3 +1,3 @@
 const util1 = require('./notes.js')
-
-console.log(util1())
+const chalk = require('chalk')
+console.log(chalk.green.italic(util1()))
