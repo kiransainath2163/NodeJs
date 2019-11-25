@@ -15,6 +15,9 @@ yargs.command({
             describe:'Body Content',
             demandOption:true,
             type:'string'
+        },
+        footer:{
+            describe:'THis is footer'
         }
     },
     handler:function(argv){
