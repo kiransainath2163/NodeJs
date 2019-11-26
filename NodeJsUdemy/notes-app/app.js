@@ -9,7 +9,7 @@ yargs.command({
         title: {
             describe: 'Note Title',
             demandOption: true,
-            type: ' string'
+            type: 'string'
         },
         body: {
             describe: 'Body Content',
