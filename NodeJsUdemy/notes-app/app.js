@@ -12,7 +12,7 @@ yargs.command({
             type: 'string'
         },
         body: {
-            describe: 'Body Content',
+            describe:'Body Content',
             demandOption: true,
             type: 'string'
         }
