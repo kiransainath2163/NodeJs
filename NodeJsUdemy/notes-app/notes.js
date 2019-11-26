@@ -26,12 +26,10 @@ let addNotes = function (title1, body1) {
 }
 
 let removeNotes = function (title1) {
-    let d = JsonData.filter((c) => {
-        return c.title === title1
-    })
+    let d = JsonData.find((c) => {c.title === title1})
     let c = 0
     for (let i = 0; i < JsonData.length; i++) {
-        if (d[0] === JsonData[i]) {
+        if (d === JsonData[i]) {
             JsonData.splice(i, 1)
             console.log(chalk.green.inverse('Note '+d[0].title+' has been removed successfully'))
             c = 1
