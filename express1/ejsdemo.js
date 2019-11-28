@@ -26,6 +26,10 @@ app.get('/cars', (req, res) => {
     })
 })
 
+app.get('/insert',(req,res)=>{
+    
+})
+
 app.get('/search', (req, res) => {
     res.render('search')
 })
