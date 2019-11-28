@@ -1,28 +1,37 @@
 const request = require('request')
-//const url = 'https://api.darksky.net/forecast/4d874c11e30f4814f9ef4067201dea01/37.8267,-122.4233?units=si&lang=te&exclude=[flags,alerts,currently,daily]'
+const geocode = require('./utils/geocode')
+// const url = 'https://api.darksky.net/forecast/9d1465c6f3bb7a6c71944bdd8548d026/37.8267,-112'
 
-// request({ url: url, json: true }, (error, response, body) => {
-//     // console.log('Response:' + response)
-//     //console.log('Status: ' + response.statusCode)
-//     // let data = JSON.parse(body)
-//     // console.log(data.minutely.data)
-//     //console.log('It is currently '+body.currently.temperature+' degrees out. There is '+body.currently.precipProbability+' chance of rain.')
-//     console.log(body)
+// request({ url: url, json: true }, (error, response) => {
+//     if (error) {
+//         console.log('Unable to connect to weather service!')
+//     } else if (response.body.error) {
+//         console.log('Unable to find location')
+//     } else {
+//         console.log(response.body.daily.data[0].summary + ' It is currently ' + response.body.currently.temperature + ' degress out. There is a ' + response.body.currently.precipProbability + '% chance of rain.')   
+//     }
 // })
-let Mapboxurl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Hyderabad.json?access_token=pk.eyJ1Ijoia2lyYW4xMjEiLCJhIjoiY2szaGh6ejBrMGJzbzNjcXBvNTVyNWZncCJ9.WFDTL7Psgr_2J1IL4A9bgw&limit=1'
-request({url:Mapboxurl,json:true},(error,response,body)=>{
+
+geocode('Tamil Nadu', (error, data) => {
     if(error){
-        console.log('API Error')
-    }else if(body.message){
-        console.log('Not Authorized- No token')
+        console.log('Error: '+error)
+    }else{
+        console.log('Data: '+data.place)
     }
-    else{
-    let latitude = body.features[0].geometry.coordinates[0]
-    let longitude = body.features[0].geometry.coordinates[1]
-    console.log('Coordinates are '+latitude+','+longitude)
-    let darkslyurl = 'https://api.darksky.net/forecast/4d874c11e30f4814f9ef4067201dea01/'+latitude+','+longitude+'?units=si&lang=te&exclude=[flags,alerts,currently,daily]'
-    request({url:darkslyurl,json:true},(error,response,body)=>{
-        console.log(body.hourly.data[0])
-    })
-}
 })
+
+
+//
+// Goal: Create a reusable function for getting the forecast
+//
+// 1. Setup the "forecast" function in utils/forecast.js
+// 2. Require the function in app.js and call it as shown below
+// 3. The forecast function should have three potential calls to callback:
+//    - Low level error, pass string for error
+//    - Coordinate error, pass string for error
+//    - Success, pass forecast string for data (same format as from before)
+
+forecast(-75.7088, 44.1545, (error, data) => {
+    console.log('Error', error)
+    console.log('Data', data)
+  })
