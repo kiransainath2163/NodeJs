@@ -7,8 +7,8 @@ let geocode = (address, cb) => {
         } else if (response.body.features.length === 0) {
             cb('Unable to find location. Try another search.',undefined)
         } else {
-            const latitude = response.body.features[0].center[0]
-            const longitude = response.body.features[0].center[1]
+            const latitude = response.body.features[0].center[1]
+            const longitude = response.body.features[0].center[0]
             const place = response.body.features[0].place_name
             cb(undefined,{latitude,longitude,place})
         }
