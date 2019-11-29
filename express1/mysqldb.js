@@ -3,7 +3,7 @@ const pool = mysql.createPool({
     host:'localhost',
     user:'root',
     password:'kdl43w800c',
-    database:'plsdb'
+    database:'psldb'
 })
 
 module.exports=pool.promise();

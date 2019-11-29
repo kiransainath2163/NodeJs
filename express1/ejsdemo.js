@@ -26,8 +26,28 @@ app.get('/cars', (req, res) => {
     })
 })
 
-app.get('/insert',(req,res)=>{
-    
+app.get('/insert', (req, res) => {
+    res.render('insert')
+})
+
+app.post('/insert', (req, res) => {
+    let id = req.body.id
+    let make = req.body.make
+    let model = req.body.model
+    let variant = req.body.variant
+    //console.log(id,make,model,variant)
+    let sql1 = 'insert into cartable values(?,?,?,?)';
+    console.log(req.body);
+    db.execute(sql1, [id, make, model, variant]).then(() => {
+        let sql2 = 'select * from cartable'
+        db.execute(sql2).then(([rows, fields]) => {
+            console.log('Inserted')
+            res.render('showcars', {
+                cars: rows
+            })
+        })
+    })
+
 })
 
 app.get('/search', (req, res) => {

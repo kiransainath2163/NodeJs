@@ -15,13 +15,14 @@
                 <th>Id</th>
                 <th>Company</th>
                 <% 
-                        for(let i=0;i<cars.length;i++)
-                        {
-                        %>
+                for(let i=0;i<cars.length;i++)
+                {
+                %>
                 <tr>
-
                     <td><%=cars[i].id %></td>
                     <td><%=cars[i].make %></td>
+                    <td><%=cars[i].model %></td>
+                    <td><%=cars[i].variant %></td>
                 </tr>
                 <%
                 }
