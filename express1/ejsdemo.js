@@ -36,7 +36,7 @@ app.post('/insert', (req, res) => {
     let model = req.body.model
     let variant = req.body.variant
     //console.log(id,make,model,variant)
-    let sql1 = ' insert into cartable values(?,?,?,?)';
+    let sql1 = 'insert into cartable values(?,?,?,?)';
     console.log(req.body);
     db.execute(sql1, [id, make, model, variant]).then(() => {
         let sql2 = 'select * from cartable'
