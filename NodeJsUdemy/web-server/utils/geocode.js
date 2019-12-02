@@ -10,6 +10,7 @@ let geocode = (address, cb) => {
             const latitude = body.features[0].center[1]
             const longitude = body.features[0].center[0]
             const place = body.features[0].place_name
+            console.log(latitude,longitude,place)
             cb(undefined, { latitude, longitude, place })
         }
     })

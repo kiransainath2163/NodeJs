@@ -19,6 +19,6 @@ const product = {
     rating:undefined
 }
 
-let { label, stock, salePrice='gafafsa', rating = 45 } = product
+let { label, stock, salePrice, rating} = product
 
 console.log(label, stock, salePrice, rating)

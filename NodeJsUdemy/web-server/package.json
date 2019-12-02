@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "nm": "nodemon src/app.js -e js,hbs",
+    "nm": "nodemon src/app.js -e js,hbs,json,css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "hbs": "^4.0.6",
-    "nodemon": "^2.0.1"
+    "nodemon": "^2.0.1",
+    "request": "^2.88.0"
   },
   "devDependencies": {},
   "keywords": [],

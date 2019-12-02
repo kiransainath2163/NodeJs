@@ -7,23 +7,23 @@
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/app.js"></script>
-  <!-- Latest compiled and minified CSS -->
 </head>
 
 <body>
     <div class="container">
         {{>header}}
-        <p>Enter Place:</p>
         <form action="/weather" method="POST">
-            
             <input type="text" style='border-radius: 4px; border: 2px solid grey;height:20px' name='place'>
             <button class='button'> Submit</button>
         </form>
-        {{!-- <p>Temperature is {{temperature}} degrees celcius</p> --}}
-         
+        <p>Place :<b>{{place}}</b></p>
+        <p>Temperature is {{temperature}}&#176 celcius</p>
+        <p>Precipitation probability is {{precipProbability}}%</p>
+        <p>Humidity is {{humidity}}%</p>
+
     </div>
     {{>footer}}
-   
+
 </body>
 
 </html>
